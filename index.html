@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dezvoltarea Informaticii și Educației Informatice</title>
+    <style>
+        /* Resetare stiluri pentru a evita conflicte */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Stiluri pentru body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #3b82f6, #9333ea);
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        header {
+            background-color: #1d4ed8; /* Albastru vibrant */
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 3rem;
+            border-bottom: 5px solid #9333ea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            background-color: #4f46e5;
+            margin: 0;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul li {
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #facc15; /* Galben luminos la hover */
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background-color: #1d4ed8;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .active-section {
+            display: block;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stiluri pentru containerul de quiz */
+        .quiz-container {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+
+        .quiz-container h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #4b5563;
+        }
+
+        .quiz-container input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #1d4ed8;
+        }
+
+        .quiz-container label {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .quiz-container label:hover {
+            color: #4f46e5;
+        }
+
+        .quiz-container button {
+            background-color: #1d4ed8;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-container button:hover {
+            background-color: #9333ea;
+        }
+
+        /* Stiluri pentru responsivitate */
+        @media (max-width: 768px) {
+            header {
+                font-size: 2rem;
+                padding: 30px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            nav ul li {
+                margin-bottom: 15px;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            .quiz-container {
+                padding: 20px;
+            }
+
+            .quiz-container button {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+            document.getElementById(sectionId).classList.add('active-section');
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Dezvoltarea Informaticii și Educației Informatice</h1>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="showSection('home')">Acasă</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('istorie')">Istoria Informaticii</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('educatie')">Informatica în Educație</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('rol')">Rolul Informaticii Azi</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('quiz')">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="content-section active-section">
+        <h2>Introducere</h2>
+        <p>Informatica este un domeniu fascinant care a evoluat rapid și a transformat fiecare aspect al vieții noastre. De la calculatoare mari și greoaie, la dispozitive miniaturale care rulează aplicații complexe, informatica joacă un rol esențial în dezvoltarea societății moderne.</p>
+    </section>
+
+    <section id="istorie" class="content-section">
+        <h2>Istoria Informaticii</h2>
+        <p>Istoria informaticii începe în secolul al XIX-lea, cu invenția mașinii de calcul a lui Charles Babbage, considerată un precursor al computerului modern. Ada Lovelace, cunoscută ca primul programator al lumii, a dezvoltat instrucțiuni pentru această mașină, demonstrând conceptul de algoritm.</p>
+        <img src="https://www.shutterstock.com/shutterstock/photos/2284126663/display_1500/stock-photo-data-science-and-big-data-technology-scientist-computing-analysing-and-visualizing-complex-data-2284126663.jpg" alt="Istoria Informaticii">
+    </section>
+
+    <section id="educatie" class="content-section">
+        <h2>Informatica în Educație</h2>
+        <p>Informatica a fost introdusă în educație începând cu jumătatea secolului XX, pe măsură ce tehnologia a avansat. În primele faze, calculatoarele erau utilizate în scopuri administrative, dar treptat au fost integrate în curriculumul școlar.</p>
+    </section>
+
+    <section id="rol" class="content-section">
+        <h2>Rolul Informaticii Azi și în Viitor</h2>
+        <p>Astăzi, informatica influențează aproape toate domeniile, de la sănătate la educație și divertisment. Tehnologii precum inteligența artificială și realitatea augmentată sunt deja implementate în multe industrii și au un impact semnificativ asupra modului în care lucrăm și trăim.</p>
+    </section>
+
+    <section id="quiz" class="content-section">
+        <h2>Quiz - Testează-ți Cunoștințele</h2>
+        <div class="quiz-container">
+            <h3>Care dintre următoarele tehnologii a fost inventată de Alan Turing?</h3>
+            <input type="radio" id="masina_turing" name="quiz" value="Mașina Turing">
+            <label for="masina_turing">Mașina Turing</label><br>
+            <input type="radio" id="calculatoare_personale" name="quiz" value="Calculatoare personale">
+            <label for="calculatoare_personale">Calculatoare personale</label><br>
+            <input type="radio" id="realitate_augumentata" name="quiz" value="Realitate augmentată">
+            <label for="realitate_augumentata">Realitate augmentată</label><br>
+            <input type="radio" id="internetul_lucrurilor" name="quiz" value="Internetul lucrurilor">
+            <label for="internetul_lucrurilor">Internetul lucrurilor</label><br>
+            <input type="radio" id="supercomputer" name="quiz" value="Supercomputer">
+            <label for="supercomputer">Supercomputer</label><br>
+            <button onclick="alert('Răspuns corect: Mașina Turing!')">Verifică răspunsul</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dezvoltarea Informaticii | Toate drepturile rezervate</p>
+    </footer>
+
+</body>
+</html>
